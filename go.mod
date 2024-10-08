@@ -1,4 +1,4 @@
-module github.com/uptime-com/uptime-client-go
+module github.com/jsdidierlaurent/uptime-client-go
 
 require (
 	github.com/domainr/whois v0.0.0-20220117141512-d1392057429c
