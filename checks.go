@@ -39,6 +39,10 @@ type Check struct {
 	Notes                  string `json:"msp_notes,omitempty"`
 	IncludeInGlobalMetrics bool   `json:"msp_include_in_global_metrics,omitempty"`
 
+	IsPaused           bool `json:"is_paused,omitempty"`
+	IsUnderMaintenance bool `json:"is_under_maintenance,omitempty"`
+	StateIsUp          bool `json:"state_is_up,omitempty"`
+
 	// For DNS checks
 	DNSServer     string `json:"msp_dns_server,omitempty"`
 	DNSRecordType string `json:"msp_dns_record_type,omitempty"`
