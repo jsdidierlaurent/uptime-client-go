@@ -32,9 +32,9 @@ type Check struct {
 	SendString   string `json:"msp_send_string,omitempty"`
 	ExpectString string `json:"msp_expect_string,omitempty"`
 
-	ContactGroups []string `json:"contact_groups,omitempty"`
-	Tags          []string `json:"tags,omitempty"`
-	Escalations   []string `json:"escalations,omitempty"`
+	ContactGroups []string          `json:"contact_groups,omitempty"`
+	Tags          []string          `json:"tags,omitempty"`
+	Escalations   []CheckEscalation `json:"escalations,omitempty"`
 
 	Notes                  string `json:"msp_notes,omitempty"`
 	IncludeInGlobalMetrics bool   `json:"msp_include_in_global_metrics,omitempty"`
@@ -58,6 +58,12 @@ type Check struct {
 
 	// For Heartbeat checks
 	HeartbeatURL string `json:"heartbeat_url,omitempty"`
+}
+
+type CheckEscalation struct {
+	WaitTime      int      `json:"wait_time"`
+	NumRepeats    int      `json:"num_repeats"`
+	ContactGroups []string `json:"contact_groups"`
 }
 
 type CheckListResponse struct {
